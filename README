@@ -1,2 +1,127 @@
-IK NET
-Promjena: Tu �e biti upute.
+IK NET -- natjecateljsko programiranje
+================================================================================
+
+1. Uvod
+----------------------------------------
+
+Ovo je repozitorij za razmjenu rješenja zadataka na grupi za natjecateljsko
+programiranje u Informatičkom klubu NET. Repozitorij je pokrenut s idejom da je
+vrlo korisno čitati i proučavati tuđa rješenja: na taj način sudionici grupe
+međusobno dijele dobre ideje i trikove, modificiraju ih i usavršavaju, što vodi
+prema iterativnom procesu učenja. Naravno, da bi stvar funkcionirala, najbitnije
+je da sudionici grupe rješavaju što više zadataka i time generiraju sadržaj.
+
+Repozitorij i cjelokupni sadržaj može se pregledavati online:
+
+https://github.com/fniksic/iknet
+
+2. Instalacija i korištenje repozitorija
+----------------------------------------
+
+Repozitorij se nalazi na GitHubu (http://github.com/). Za korištenje je potrebno
+tamo otvoriti account. Nakon otvaranja accounta potrebno je instalirati i
+konfigurirati Git na način opisan u jednom od sljedećih guideova, ovisno o
+operativnom sustavu koji se koristi:
+
+http://help.github.com/win-set-up-git/
+http://help.github.com/linux-set-up-git/
+http://help.github.com/mac-set-up-git/
+
+Zatim je potrebno javiti svoj username na email fniksic@gmail.com da vas se
+doda kao kolaboratora u repozitorij.
+
+Način rada s repozitorijem je sljedeći:
+
+  1. Na Windowsima se pokreće Git Bash, a na Linuxu/OSX konzola. Naredbe koje se
+     koriste izgledaju otprilike ovako:
+     
+       cd ..
+       cd direktorij
+       cd c:/neki/drugi/direktorij
+       ls
+
+  2. U željenom direktoriju se izvrši kloniranje repozitorija:
+
+       git clone git@github.com:fniksic/iknet.git
+     
+     Time će se pojaviti direktorij iknet. U njega se uđe sa cd iknet. Zatim se
+     ulazi u svoj direktorij (npr. Mihael Pribanić ulazi u mpribanic). Ako
+     vašeg direktorija nema, napravite ga naredbom mkdir (npr. Mihael bi
+     napravio direktorij naredbom mkdir mpribanic.)
+
+  3. Unutar svojeg direktorija spremate rješenja svojih zadataka. Kad dodate
+     ili promijenite datoteku (npr. zadatak.bas), potrebno ju je dodati u Git
+     indeks naredbom:
+
+       git add zadatak.bas
+
+  4. U trenutku kad napravite značajnu promjenu koju želite spremiti, izvršite
+     commit:
+
+       git commit -m "Kratki opis promjene."
+
+     Time ste spremili svoju lokalnu kopiju repozitorija. Sve tako spremljene
+     verzije kasnije možete uspoređivati, vraćati i slično.
+
+  5. Da biste povukli najnovije promjene sa GitHuba, izvršite:
+
+       git pull
+
+  6. Ako želite lokalnu kopiju gurnuti na GitHub, izvršite naredbu:
+
+       git push origin master
+
+Za dodatne informacije o Gitu i GitHubu pogledajte:
+
+  * http://rogerdudler.github.com/git-guide/
+  * http://help.github.com/git-cheat-sheets/
+  * http://help.github.com/
+
+Jedan zgodan program koji vam može olakšati korištenje Gita je:
+
+  * http://code.google.com/p/tortoisegit/
+
+3. Važne napomene
+----------------------------------------
+
+Nekoliko napomena kojih bi se trebali pridržavati da sve ovo uspije:
+
+  * Ako koristite Microsoft QuickBasic 4.5, pri spremanju datoteke će vam biti
+    ponuđeno da je spremite u QuickBasic-ovom formatu ili običnom tekstualnom
+    (ASCII) formatu. Obavezno odaberite drugu opciju. Datoteku spremite s
+    nastavkom .bas.
+
+  * Koristite komentare:
+      
+      Na početku rješenja zadatka obavezno u komentaru navedite gdje se može
+      pročitati tekst zadatka. Ako zadatak nije online, ukratko napišite o čemu
+      se radi. Ovo je bitno kako bi drugi sudionici grupe znali koji ste zadatak
+      riješili.
+
+      Osim toga, općenito je dobro komentirati kod. Ako ste napisali kod koji
+      mislite da bi nekome (možda i vama) mogao djelovati zbunjujuće, napišite
+      ukratko što taj kod radi i zašto je upravo tako napisan.
+
+  * Uvlačite blokove koda unutar IF naredbi i petlji. Ovo je jako važno kako bi
+    kod bio čitljiv. Primjere kako napisati ispravno uvučene blokove možete
+    vidjeti u direktoriju fniksic.
+
+  * Mijenjajte datoteke samo unutar svojeg direktorija. Ovo nije presudno jer
+    je Git jako dobar u baratanju promjenama koje više ljudi radi na istoj
+    datoteci (zapravo tome i služi), ali za početak je bolje da se ipak
+    pridržavate ove napomene i fokusirate se na rješavanje zadataka, a od Gita
+    koristite samo najosnovnije.
+
+4. Izvori zadataka
+----------------------------------------
+
+Za početak, velik broj zadataka može se naći u arhivi Hrvatskog otvorenog
+natjecanja u informatici:
+
+http://www.hsin.hr/honi/arhiva/
+
+5. Razno
+----------------------------------------
+
+Za sva pitanja i komentare javite se mailom na fniksic@gmail.com. Želim vam
+puno uspjeha!
