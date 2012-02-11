@@ -45,7 +45,7 @@ SUB ispis
     FOR i = 1 TO n
         PRINT CHR$(a(i));
     NEXT i
-    PRINT
+    PRINT ,
 END SUB
 
 SUB nextPerm
