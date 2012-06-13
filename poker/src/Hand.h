@@ -27,6 +27,7 @@ namespace poker {
 		Hand(std::vector<Card>&);
 
 		std::vector<Card> getCards() const;
+		std::pair<Comb_t, std::vector<int> > getCombination() const;
 
 		int compare(const Hand&) const;
 		std::string toString() const;

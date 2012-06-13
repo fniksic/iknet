@@ -12,7 +12,7 @@
 
 namespace poker {
 
-	const std::string Card::rankNames[] = { "", "", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A" };
+	const std::string Card::rankNames[] = { "", "A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A" };
 	const std::string Card::suitNames[] = { "S", "H", "C", "D" };
 
 	Card::Card(int rank, Suit_t suit) :
