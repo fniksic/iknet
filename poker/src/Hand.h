@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <string>
+#include <utility>
 
 #include "StringRepresentable.h"
 #include "Comparable.h"
@@ -34,7 +35,9 @@ namespace poker {
 		static const unsigned int hand_size = 5;
 
 		std::vector<Card> _cards;
+		std::pair<Comb_t, std::vector<int> > _combination;
 
+		void process();
 		bool isStraight() const;
 		bool isFlush() const;
 	};

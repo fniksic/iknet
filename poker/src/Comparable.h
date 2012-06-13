@@ -26,5 +26,10 @@ namespace poker {
 		return l.compare(r) < 0;
 	}
 
+	template<class T>
+	bool operator>(const Comparable<T>& l, const T& r) {
+		return l.compare(r) > 0;
+	}
+
 } /* namespace poker */
 #endif /* COMPARABLE_H_ */

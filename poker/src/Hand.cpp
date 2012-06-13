@@ -9,17 +9,18 @@
 #include <string>
 #include <cassert>
 #include <algorithm>
+#include <utility>
+#include <functional>
 
 #include "Hand.h"
 #include "Card.h"
-#include "Comparable.h"
 
 namespace poker {
 
 	Hand::Hand(std::vector<Card>& cards) :
 			_cards(cards) {
 		assert(_cards.size() == hand_size);
-		std::sort(_cards.begin(), _cards.end());
+		process();
 	}
 
 	std::vector<Card> Hand::getCards() const {
@@ -37,6 +38,22 @@ namespace poker {
 			result += (i > 0 ? ", " : "") + getCards()[i].toString();
 		result += "]";
 		return result;
+	}
+
+	void Hand::process() {
+		sort(_cards.begin(), _cards.end(), std::greater<Card>());
+
+		int currentRank = 0, totalRanks = 0;
+		std::vector<int> counts, ranks;
+		for (unsigned int i = 0; i < hand_size; ++i) {
+			if (currentRank != _cards[i].getRank()) {
+				currentRank = _cards[i].getRank();
+				++totalRanks;
+				ranks.push_back(currentRank);
+				counts.push_back(0);
+			}
+			++counts[totalRanks - 1];
+		}
 	}
 
 	bool Hand::isStraight() const {
