@@ -5,6 +5,9 @@
  *      Author: filip
  */
 
+#include <string>
+#include <cstddef>
+
 #include "StringTokenizer.h"
 
 namespace poker {

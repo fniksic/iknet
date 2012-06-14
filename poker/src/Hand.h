@@ -25,7 +25,7 @@ namespace poker {
 			HIGH_CARD, PAIR, TWO_PAIRS, THREE, STRAIGHT, FLUSH, FULL_HOUSE, FOUR, STRAIGHT_FLUSH, ILLEGAL
 		};
 
-		Hand(std::vector<Card>&);
+		Hand(const std::vector<Card>&);
 
 		std::vector<Card> getCards() const;
 		std::pair<Comb_t, std::vector<int> > getCombination() const;

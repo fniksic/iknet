@@ -19,7 +19,8 @@
 namespace poker {
 
 	const std::map<int, Hand::Comb_t> Hand::countsToCombination = createCountsToCombination();
-	const std::string Hand::combinationNames[] = { "High card", "A pair", "Two pairs", "Three of a kind", "Straight", "Flush", "Full house", "Four of a kind", "Straight flush", "Illegal combination" };
+	const std::string Hand::combinationNames[] = { "High card", "A pair", "Two pairs", "Three of a kind", "Straight",
+			"Flush", "Full house", "Four of a kind", "Straight flush", "Illegal combination" };
 
 	std::map<int, Hand::Comb_t> Hand::createCountsToCombination() {
 		std::map<int, Comb_t> countsToCombination;
@@ -33,7 +34,7 @@ namespace poker {
 		return countsToCombination;
 	}
 
-	Hand::Hand(std::vector<Card>& cards) :
+	Hand::Hand(const std::vector<Card>& cards) :
 			_cards(cards) {
 		assert(_cards.size() == hand_size);
 		_combination = calculateCombination();
