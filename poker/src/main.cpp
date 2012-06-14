@@ -13,6 +13,7 @@
 #include "Card.h"
 #include "CardConverter.h"
 #include "Hand.h"
+#include "HandConverter.h"
 
 using namespace poker;
 using namespace std;
@@ -26,16 +27,11 @@ int main() {
 	cout << boolean[ten_of_hearts < ace_of_spades] << endl;
 	cout << CardConverter::convert("TC") << CardConverter::convert("AC") << CardConverter::convert("3H") << endl;
 
-	vector<Card> cards;
-	cards.push_back(CardConverter::convert("TC"));
-	cards.push_back(CardConverter::convert("QC"));
-	cards.push_back(CardConverter::convert("KC"));
-	cards.push_back(CardConverter::convert("JC"));
-	cards.push_back(CardConverter::convert("AC"));
+	Hand straight_flush = HandConverter::convert("TC JC QC KC AC");
+	Hand straight = HandConverter::convert("9C TD JH QS 8C");
 
-	Hand hand(cards);
-
-	cout << hand << endl;
+	cout << straight << endl << straight_flush << endl
+			<< straight << " > " << straight_flush << " : " << boolean[straight > straight_flush] << endl;
 
 	return EXIT_SUCCESS;
 }

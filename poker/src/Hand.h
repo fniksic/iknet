@@ -9,6 +9,7 @@
 #define HAND_H_
 
 #include <vector>
+#include <map>
 #include <string>
 #include <utility>
 
@@ -21,7 +22,7 @@ namespace poker {
 	class Hand: public StringRepresentable, public Comparable<Hand> {
 	public:
 		enum Comb_t {
-			HIGH_CARD, PAIR, TWO_PAIRS, THREE, STRAIGHT, FLUSH, FULL_HOUSE, FOUR, STRAIGHT_FLUSH
+			HIGH_CARD, PAIR, TWO_PAIRS, THREE, STRAIGHT, FLUSH, FULL_HOUSE, FOUR, STRAIGHT_FLUSH, ILLEGAL
 		};
 
 		Hand(std::vector<Card>&);
@@ -33,13 +34,16 @@ namespace poker {
 		std::string toString() const;
 
 	private:
-		static const unsigned int hand_size = 5;
+		static const int hand_size = 5;
+		static const std::map<int, Comb_t> countsToCombination;
+		static const std::string combinationNames[];
+
+		static std::map<int, Comb_t> createCountsToCombination();
 
 		std::vector<Card> _cards;
 		std::pair<Comb_t, std::vector<int> > _combination;
 
-		void process();
-		bool isStraight() const;
+		std::pair<Comb_t, std::vector<int> > calculateCombination() const;
 		bool isFlush() const;
 	};
 

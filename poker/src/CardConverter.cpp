@@ -42,13 +42,13 @@ namespace poker {
 		return suitMap;
 	}
 
-	Card CardConverter::convert(const std::string &str) {
-		assert(str.size() == 2);
-		assert(rankMap.count(str[0]) > 0);
-		assert(suitMap.count(str[1]) > 0);
+	Card CardConverter::convert(const std::string &cardString) {
+		assert(cardString.size() == 2);
+		assert(rankMap.count(cardString[0]) > 0);
+		assert(suitMap.count(cardString[1]) > 0);
 
-		int rank = rankMap.at(str[0]);
-		Card::Suit_t suit = suitMap.at(str[1]);
+		int rank = rankMap.at(cardString[0]);
+		Card::Suit_t suit = suitMap.at(cardString[1]);
 		return Card(rank, suit);
 	}
 
