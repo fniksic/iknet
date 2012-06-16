@@ -79,7 +79,7 @@ namespace poker {
 
 		Comb_t combination = countsToCombination.at(counts);
 
-		if (ranks[0] == 14 && ranks[1] == hand_size && ranks[totalRanks - 1] == 2) {
+		if (ranks[0] == 14 && totalRanks == hand_size &&ranks[1] == hand_size && ranks[totalRanks - 1] == 2) {
 			ranks[0] = 1;
 			rotate(ranks.begin(), ranks.begin() + 1, ranks.end());
 		}
