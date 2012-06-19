@@ -43,7 +43,13 @@ namespace poker {
 		std::vector<Card> _cards;
 		std::pair<Comb_t, std::vector<int> > _combination;
 
-		std::pair<Comb_t, std::vector<int> > calculateCombination() const;
+		std::pair<Comb_t, std::vector<int> > computeCombination() const;
+		std::pair<Comb_t, std::vector<int> > computeCombination(int, const std::vector<int>&) const;
+		std::map<int, int> computeHistogram() const;
+		std::vector<std::pair<int, int> > computeCountsAndRanks(const std::map<int, int>&) const;
+		std::pair<int, std::vector<int> > unzip(const std::vector<std::pair<int, int> >&) const;
+		void fixLowStraight(std::vector<int>&) const;
+		bool isStraight(const std::vector<int>&) const;
 		bool isFlush() const;
 	};
 
