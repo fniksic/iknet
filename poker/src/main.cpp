@@ -34,7 +34,7 @@ int main() {
 	Hand low_straight = HandConverter::convert("4C 5D 3S 2C AS");
 	Hand middle_straight = HandConverter::convert("4C 5D 3S 2C 6S");
 	Hand three_of_a_kind = HandConverter::convert("2C 2D 2H KS AC");
-	Hand two_pairs = HandConverter::convert("7C 7D 4K 4S AS");
+	Hand two_pairs = HandConverter::convert("7C 7D 4H 4S AS");
 	Hand a_pair = HandConverter::convert("6C 3C 6D AS 2D");
 	Hand high_card = HandConverter::convert("8C 4D TS 7C 6C");
 	Hand lower_high_card = HandConverter::convert("4C 9D 7S 2S 3S");

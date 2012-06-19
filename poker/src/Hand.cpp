@@ -112,7 +112,7 @@ namespace poker {
 	pair<int, vector<int> > Hand::unzip(const vector<pair<int, int> >& countsAndRanks) const {
 		int counts = 0;
 		vector<int> ranks;
-		for (int i = 0; i < hand_size; ++i) {
+		for (int i = 0; i < countsAndRanks.size(); ++i) {
 			counts = counts * 10 + countsAndRanks[i].first;
 			ranks.push_back(countsAndRanks[i].second);
 		}
