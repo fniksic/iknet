@@ -26,9 +26,10 @@ using std::greater;
 
 namespace poker {
 
-	const map<int, Hand::Comb_t> Hand::countsToCombination = createCountsToCombination();
 	const string Hand::combinationNames[] = { "High card", "A pair", "Two pairs", "Three of a kind", "Straight",
 			"Flush", "Full house", "Four of a kind", "Straight flush", "Illegal combination" };
+
+	const map<int, Hand::Comb_t> Hand::countsToCombination = createCountsToCombination();
 
 	map<int, Hand::Comb_t> Hand::createCountsToCombination() {
 		map<int, Comb_t> countsToCombination;
@@ -77,10 +78,11 @@ namespace poker {
 		return computeCombination(counts, ranks);
 	}
 
-	pair<Hand::Comb_t, vector<int> > Hand::computeCombination(int counts, const vector<int>& ranks) const {
+	pair<Hand::Comb_t, vector<int> > Hand::computeCombination(int counts, vector<int>& ranks) const {
+		Comb_t combination = countsToCombination.at(counts);
+		fixLowStraight(ranks);
 		bool straight = isStraight(ranks);
 		bool flush = isFlush();
-		Comb_t combination = countsToCombination.at(counts);
 
 		if (straight && flush)
 			combination = STRAIGHT_FLUSH;
